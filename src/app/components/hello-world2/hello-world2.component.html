@@ -1,0 +1,52 @@
+<h1>Hello World 2!</h1>
+<p>
+  Este é o meu segundo componente no Angular!
+</p>
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <input type="number" class="form-control mb-2" [(ngModel)]="num1" />
+    <button
+      class="btn mr-2"
+      [ngClass]="{
+        'btn-light': operacao !== '+',
+        'btn-primary': operacao === '+'
+      }"
+      (click)="changeOperation('+')"
+    >
+      +
+    </button>
+    <button
+      class="btn mr-2"
+      [ngClass]="{
+        'btn-light': operacao !== '-',
+        'btn-primary': operacao === '-'
+      }"
+      (click)="changeOperation('-')"
+    >
+      -
+    </button>
+    <button
+      class="btn mr-2"
+      [ngClass]="{
+        'btn-light': operacao !== '*',
+        'btn-primary': operacao === '*'
+      }"
+      (click)="changeOperation('*')"
+    >
+      *
+    </button>
+    <button
+      class="btn"
+      [ngClass]="{
+        'btn-light': operacao !== '/',
+        'btn-primary': operacao === '/'
+      }"
+      (click)="changeOperation('/')"
+    >
+      /
+    </button>
+    <input type="number" class="form-control mt-2" [(ngModel)]="num2" />
+    <button class="btn btn-light mt-2" (click)="equal()">=</button>
+    <input #resultInput type="text" class="form-control mt-2" readonly />
+  </div>
+</div>
